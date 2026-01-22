@@ -10,6 +10,10 @@ class Stock:
         self.candle = {"time" : time, "stock_value" : stock_value}
         self.stock_name = "stock_name"
 
+def get_rate(origin,current):
+    change_rate = ((current-origin) / origin) * origin
+    return change_rate
+
 
 def GetStock():
     FILE_point = open("data/stock.stk","r")
