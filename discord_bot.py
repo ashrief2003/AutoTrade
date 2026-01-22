@@ -8,6 +8,9 @@ from autotrade import *
 import os
 
 
+TOKEN = "YOUR DISCORD BOT TOKEN HERE"
+
+
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -72,5 +75,6 @@ async def on_message(message):
             os.remove(IMAGE_PATH)
 
     await bot.process_commands(message)
+
 
 bot.run(TOKEN)
