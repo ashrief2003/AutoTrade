@@ -6,11 +6,10 @@ from discord.ext import commands
 from imaging import *
 from autotrade import *
 import os
+from test import *
 
 
-TOKEN = "YOUR DISCORD BOT TOKEN HERE"
-
-
+TOKEN = "DISCORD_TOKEN"
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -52,21 +51,10 @@ async def on_message(message):
         IMAGE_PATH = "chart_00000.png"
         stock = [0]
 
-        for i in range(20):
-            x = random.randint(0, 300)
-            print(x)
-            stock.append(x)
-
-
-        img = create_chart_image()
-        chart_numbers(img)
-        chart_draw_progress(img,stock)
-        chart_save_image(img)
-
-
+        run_test()
 
         await message.channel.send(
-            content="random stock chart progress generated",
+            content="",
             file=discord.File(IMAGE_PATH)
         )
 
@@ -75,6 +63,5 @@ async def on_message(message):
             os.remove(IMAGE_PATH)
 
     await bot.process_commands(message)
-
 
 bot.run(TOKEN)
