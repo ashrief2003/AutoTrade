@@ -21,14 +21,8 @@ def write_text(img ,print_text ,vector , color = (255,255,255),fontsize = 1):#dr
 
 def DrawLine(img,v1,v2 ,color = (255,255,255)): #drawline
     cv2.line(img,v1,v2, color, 2)
-    #DrawRollerCoster(cv2.line,stock,image)
-
 
 def chart_save_image(image): #save it as image
     cv2.imwrite(path, image)
 
-
-#check
-def candle_rate():
-    write_rate(cv2.putText,img,cv2.FONT_HERSHEY_SIMPLEX)
     

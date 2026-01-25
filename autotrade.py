@@ -1,9 +1,12 @@
 #the core file of autotrade
 
 class Stock:
-    def __init__(self, time, stock_value):
-        self.candle = {"time" : time, "stock_value" : stock_value}
-        self.stock_name = "stock_name"
+    def __init__(self, name):
+        self.candle = []
+        self.stock_name = name
+    
+    def add_candle(self,time,value):
+        self.candle.append({"time" : time, "value" : value})
 
 
 

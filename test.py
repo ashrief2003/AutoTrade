@@ -31,6 +31,9 @@ change_rate = []
 def add_profile(vector,value,stock_value):
     return {"vector" : vector, "value" : value, "stock_value" : stock_value}
 
+def draw_vertical_numbers():
+    pass
+
 def draw_roller_coster(img,stock): #rollercoaster style
     change_rate = []
     #drawLineFun = cv2.line(), output = image
@@ -42,7 +45,7 @@ def draw_roller_coster(img,stock): #rollercoaster style
     last_y = base - (stock[0] * 1)
     last_stock = 0
     while i != len(stock):
-        x = int((i + 1) * 26 + 45)
+        x = int((i + 1) * 50 + 45)
         y = int(base - (stock[i] * 2))
         DrawLine(img,(last_x,last_y),(x,y))
 
@@ -94,7 +97,10 @@ def run_test():
 #-------------------------------------------#
 
 
-
+x = Stock("google")
+x.add_candle("tome",100)
+x.add_candle("tome",1213)
+print(x.candle)
 
 
 
